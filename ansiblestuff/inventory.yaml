@@ -1,0 +1,12 @@
+all:
+  children:
+    demo:
+      hosts:
+        172.31.7.3
+      vars:
+        ansible_user: ubuntu
+    newgroup:
+      hosts:
+        172.31.46.194
+      vars:
+        ansible_user: ubuntu
