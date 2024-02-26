@@ -9,7 +9,7 @@ def home():
 
 @app.route('/about')
 def about():
-    return 'Here is some updated text'
+    return '<h1>Here is some BOLD updated text</h1>'
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
