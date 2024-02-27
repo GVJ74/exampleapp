@@ -3,12 +3,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pip install flask'
+                bat 'npm i'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'python3 app.py'
+                parallel {
+                    a: {bat 'npm run build'}
+                    b: {bat 'npx json-server path/to/file --port 8000'}
+                }
             }
         }
     }
